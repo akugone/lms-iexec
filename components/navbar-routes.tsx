@@ -1,7 +1,7 @@
 "use client";
 
-import { SignIn, UserButton } from "@clerk/nextjs";
-import { usePathname, useRouter } from "next/navigation";
+import { UserButton } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
 import Link from "next/link";
@@ -13,7 +13,7 @@ interface NavbarRoutesProps {
 }
 
 export const NavbarRoutes: React.FC<NavbarRoutesProps> = ({
-  currentProfile,
+  currentProfile = null,
 }) => {
   const pathname = usePathname();
   const isTeacherPage = pathname?.startsWith("/teacher");
